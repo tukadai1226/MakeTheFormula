@@ -112,6 +112,12 @@
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在の得点:10P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpF-HF-9Ha">
+                                <rect key="frame" x="95.666666666666686" y="407" width="202" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yy6-AV-vdv"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
@@ -121,7 +127,9 @@
                             <constraint firstAttribute="trailing" secondItem="cvX-8d-jOC" secondAttribute="trailing" constant="5" id="FLw-bC-gb3"/>
                             <constraint firstItem="RtH-TX-swA" firstAttribute="leading" secondItem="Yy6-AV-vdv" secondAttribute="leading" constant="5" id="FY8-XF-Ipm"/>
                             <constraint firstItem="cvX-8d-jOC" firstAttribute="top" secondItem="Yy6-AV-vdv" secondAttribute="top" constant="50" id="Gur-ou-Acc"/>
+                            <constraint firstItem="dpF-HF-9Ha" firstAttribute="centerX" secondItem="sIa-nO-07p" secondAttribute="centerX" id="JxF-tS-6hh"/>
                             <constraint firstItem="Yy6-AV-vdv" firstAttribute="trailing" secondItem="RtH-TX-swA" secondAttribute="trailing" constant="5" id="RCh-Qr-hkc"/>
+                            <constraint firstItem="dpF-HF-9Ha" firstAttribute="top" secondItem="gHC-eO-2m9" secondAttribute="bottom" constant="180" id="cfU-yP-oWq"/>
                             <constraint firstItem="cvX-8d-jOC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yy6-AV-vdv" secondAttribute="leading" symbolic="YES" id="qQK-TF-Szz"/>
                             <constraint firstItem="gHC-eO-2m9" firstAttribute="top" secondItem="Yy6-AV-vdv" secondAttribute="top" constant="120" id="seo-yC-mQB"/>
                         </constraints>
@@ -131,7 +139,8 @@
                         <outlet property="devideButton" destination="dqT-cG-lzV" id="0GH-6z-jnC"/>
                         <outlet property="hangButton" destination="L0r-3e-ePx" id="ww2-Yo-Wwn"/>
                         <outlet property="minusButton" destination="dJL-TK-SAD" id="vng-SG-sOy"/>
-                        <outlet property="pulsButton" destination="ojn-9Y-6h5" id="f5R-5c-Gjl"/>
+                        <outlet property="pointLabel" destination="dpF-HF-9Ha" id="eBb-vr-ZtV"/>
+                        <outlet property="pulsButton" destination="ojn-9Y-6h5" id="gC1-yb-RC6"/>
                         <outlet property="questionLabel" destination="gHC-eO-2m9" id="9lS-4P-0SK"/>
                         <outlet property="timerLabel" destination="cvX-8d-jOC" id="FoI-xJ-bqY"/>
                     </connections>

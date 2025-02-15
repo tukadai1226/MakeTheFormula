@@ -32,8 +32,9 @@ class CalcViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeNewQuestion()
+        startTimer()
     }
-
+    // 問題作成
     func makeNewQuestion() {
         pointLabel.text = "現在の得点: \(point)P"
         let num1 = Int.random(in: 1...9)
@@ -63,7 +64,9 @@ class CalcViewController: UIViewController {
         let answerIndex = sender.tag
         print(String(answer))
         if answerIndex == answer {
+            // 合っていた場合
             point += 10
+            time += 1 // 1秒加算
         }
         makeNewQuestion()
     }
@@ -74,6 +77,7 @@ class CalcViewController: UIViewController {
     @objc func tick() {
         time -= 1
         timerLabel.text = "残り時間: \(time)秒"
+        // 0秒になった時の処理
         if time <= 0 {
             timer?.invalidate()
             

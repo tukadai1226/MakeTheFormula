@@ -9,11 +9,11 @@ import UIKit
 import AVFoundation
 
 class CalcViewController: UIViewController {
-
+    
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
-
+    
     var resultIndex: Int = 0
     var result = 0 // 答え
     var answer = 0 // 答えのボタン番号
@@ -59,10 +59,9 @@ class CalcViewController: UIViewController {
             break
         }
     }
-
+    
     @IBAction func buttonTapped(sender: UIButton) {
         let answerIndex = sender.tag
-        print(String(answer))
         if answerIndex == answer {
             // 合っていた場合
             point += 10

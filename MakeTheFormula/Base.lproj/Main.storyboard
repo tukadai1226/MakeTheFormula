@@ -151,17 +151,17 @@
                         <outlet property="pointLabel" destination="dpF-HF-9Ha" id="yGI-ca-nfR"/>
                         <outlet property="questionLabel" destination="gHC-eO-2m9" id="75R-tZ-e5T"/>
                         <outlet property="timerLabel" destination="cvX-8d-jOC" id="EhL-2B-XpM"/>
-                        <segue destination="tBP-xY-cbP" kind="show" id="JZ9-JN-jPU"/>
+                        <segue destination="tBP-xY-cbP" kind="show" identifier="ResultSegue" id="JZ9-JN-jPU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxS-by-the" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1696.9465648854962" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="AVY-bO-dcj">
             <objects>
-                <viewController id="tBP-xY-cbP" sceneMemberID="viewController">
+                <viewController id="tBP-xY-cbP" customClass="ResultViewController" customModule="MakeTheFormula" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EjY-yu-5AZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,20 +178,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxD-rV-Vg9">
-                                <rect key="frame" x="156" y="668" width="81" height="50"/>
-                                <color key="tintColor" systemColor="systemMintColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="戻る">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高得点:0P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDu-0d-hu3">
                                 <rect key="frame" x="117" y="451" width="159" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxD-rV-Vg9">
+                                <rect key="frame" x="156" y="667" width="81" height="50"/>
+                                <color key="tintColor" systemColor="systemMintColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="戻る">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="tBP-xY-cbP" eventType="touchUpInside" id="EVt-c0-mC4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XdK-az-vHb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -207,6 +210,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wN5-gO-611"/>
+                    <connections>
+                        <outlet property="highScoreLabel" destination="PDu-0d-hu3" id="De1-uZ-zVH"/>
+                        <outlet property="pointLabel" destination="ajN-uk-skl" id="jZd-Rz-on8"/>
+                        <outlet property="resultLabel" destination="Aku-nn-hOQ" id="r0T-7p-PCR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lye-zO-nYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -66,7 +66,7 @@ class CalcViewController: UIViewController {
         if answerIndex == answer {
             // 合っていた場合
             point += 10
-            time += 1 // 1秒加算
+            timerLabel.text = "残り時間: \(time)秒"
         }
         makeNewQuestion()
     }
@@ -79,8 +79,14 @@ class CalcViewController: UIViewController {
         timerLabel.text = "残り時間: \(time)秒"
         // 0秒になった時の処理
         if time <= 0 {
+            // タイマー修了
             timer?.invalidate()
-            
+            performSegue(withIdentifier: "ResultSegue", sender: nil)
         }
+    }
+    // ポイントをリザルト画面に送る
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextViewController = segue.destination as! ResultViewController
+        nextViewController.point = point
     }
 }
